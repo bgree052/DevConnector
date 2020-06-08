@@ -15,16 +15,14 @@ const User = require("../../models/User");
 router.post(
   "/",
   [
-    check("name", "Name is required")
-      .not()
-      .isEmpty(),
+    check("name", "Name is required").not().isEmpty(),
     check("email", "Please include a valid email").isEmail(),
     check(
       "password",
       "Please enter a password with 6 or more characters"
     ).isLength({
-      min: 6
-    })
+      min: 6,
+    }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -48,7 +46,7 @@ router.post(
       const avatar = gravatar.url(email, {
         s: "200",
         r: "pg",
-        d: "mm"
+        d: "mm",
       });
 
       //create the user
@@ -56,7 +54,7 @@ router.post(
         name,
         email,
         avatar,
-        password
+        password,
       });
 
       // Encrypt password
@@ -70,8 +68,8 @@ router.post(
       //get the payload which includes the user ID
       const payload = {
         user: {
-          id: user.id
-        }
+          id: user.id,
+        },
       };
 
       //then sign the token, pass in the payload, secret token & expire time, then if we get the token we send it back to the client, if not then an error
@@ -86,7 +84,7 @@ router.post(
       );
 
       // Return jsonwebtoken
-      res.send("User registered");
+      //res.send("User registered");
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Sever error");
