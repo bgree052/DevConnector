@@ -34,7 +34,7 @@ const Education = ({ education }) => {
             <th />
           </tr>
         </thead>
-        <tbody>{education}</tbody>
+        <tbody>{educations}</tbody>
       </table>
     </Fragment>
   );
