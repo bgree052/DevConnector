@@ -26,14 +26,14 @@ const Experience = ({ experience }) => {
     <Fragment>
       <h2 className='my-2'>Experience Credentials</h2>
       <table className='table'>
-        <thread>
+        <thead>
           <tr>
             <th>Company</th>
             <th className='hide-sm'>Title</th>
             <th className='hide-sm'>Years</th>
             <th />
           </tr>
-        </thread>
+        </thead>
         <tbody>{experiences}</tbody>
       </table>
     </Fragment>
