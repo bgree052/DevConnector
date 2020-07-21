@@ -1,5 +1,4 @@
 import { SET_ALERT, REMOVE_ALERT } from "../actions/types";
-import store from "../store";
 
 const initialState = [];
 
