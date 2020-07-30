@@ -4,11 +4,11 @@ const path = require("path");
 
 const app = express();
 
-//Connect Database
+// Connect Database
 connectDB();
 
 // Init Middleware
-app.use(express.json({ extended: false }));
+app.use(express.json());
 
 // Define Routes
 app.use("/api/users", require("./routes/api/users"));
@@ -28,4 +28,4 @@ if (process.env.NODE_ENV === "production") {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log("Server started on port " + PORT));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
