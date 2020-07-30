@@ -48,7 +48,22 @@ const EditProfile = ({
       instagram:
         loading || !profile.social.instagram ? "" : profile.social.instagram,
     });
-  }, [loading, getCurrentProfile]);
+  }, [
+    loading,
+    getCurrentProfile,
+    profile.bio,
+    profile.company,
+    profile.githubusername,
+    profile.location,
+    profile.skills,
+    profile.social.facebook,
+    profile.social.instagram,
+    profile.social.linkedin,
+    profile.social.twitter,
+    profile.social.youtube,
+    profile.status,
+    profile.website,
+  ]);
 
   const {
     company,
