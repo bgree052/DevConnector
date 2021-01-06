@@ -21,7 +21,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.28",
     "request": "^2.88.2",
-    "axios": ">=0.21.1"
+    "axios": ">=0.21.1",
+    "bl": ">=2.2.1",
+    "dot-prop": ">=4.2.1"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
